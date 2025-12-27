@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --pink: #f2e0e6;
+  --purple: #d8b4fe;
+  --white: #ffffff;
+  --text-color: #4a4a4a;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: var(--text-color);
+  /* Removed overflow: hidden; */
+}
+
+#root {
+  width: 100%;
+  max-width: 480px; /* Mobile-first approach, increased to accommodate wider card */
+  min-height: 100vh; /* Allow it to grow */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}

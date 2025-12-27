@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&display=swap');
+
+.final-message-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%); */
+  overflow: hidden;
+}
+
+.final-message-card {
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 0 40px 20px rgba(255, 220, 230, 0.7);
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+}
+
+.final-message-text {
+  /* font-family: 'Playfair Display', serif; */
+  font-family: 'Caveat', cursive;
+  color: #530126;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.final-message-text p {
+  margin: 20px 0;
+}
+
+.first-line {
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  color: #c72c41;
+}
+
+.highlight {
+  color: #c72c41;
+  text-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+  font-weight: bold;
+}
+
+.signature {
+  padding-top: 20px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #c72c41;
+}
+
+.underline-white {
+  text-decoration: underline;
+  text-decoration-color: white;
+}

@@ -1,0 +1,93 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100svh; /* better than 100% / 100vh on mobile */
+  padding: 1rem;
+}
+
+.loading-container h2 {
+  font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+  font-weight: 900;
+  color: var(--black);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  display: flex; /* Allow inline-block elements to align */
+  align-items: center; /* Vertically align the text and hearts */
+  justify-content: center; /* Center the content */
+}
+
+/* Generic blinking heart styling for shape and opacity blink */
+.blinking-heart {
+  width: 1rem; /* Small size */
+  height: 1rem; /* Small size */
+  position: relative;
+  transform: rotate(-45deg); /* Rotate to make heart shape */
+  margin-left: 0.5rem; /* Space from text */
+  background-color: transparent; /* Base is transparent, color handled by animation */
+  animation: blink 1s infinite alternate, /* Opacity blinking animation */
+             heart-color-switch-initial 2s infinite steps(1, end); /* Initial color for both hearts */
+  animation-delay: 0.5s; /* 0.5s delay before animation starts */
+}
+
+.blinking-heart::before,
+.blinking-heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Make circles for heart top */
+  background-color: transparent; /* Base is transparent, color handled by animation */
+}
+
+.blinking-heart::before {
+  top: -50%;
+  left: 0;
+}
+
+.blinking-heart::after {
+  top: 0;
+  left: 50%;
+}
+
+/* Specific color and color alternation animations for red heart */
+.blinking-heart.red,
+.blinking-heart.red::before,
+.blinking-heart.red::after {
+  animation: blink 1s infinite alternate 0.001s, /* Opacity blinking animation */
+             heart-color-switch-red 2s infinite steps(1, end);
+}
+
+/* Specific color and color alternation animations for blue heart */
+.blinking-heart.blue,
+.blinking-heart.blue::before,
+.blinking-heart.blue::after {
+  animation: blink 1s infinite alternate 0.001s, /* Opacity blinking animation */
+             heart-color-switch-blue 2s infinite steps(1, end);
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes heart-color-switch-red {
+  0% { background-color: #FF0000; } /* Start red */
+  50% { background-color: blue; }     /* Switch to blue */
+  100% { background-color: #FF0000; } /* Back to red */
+}
+
+@keyframes heart-color-switch-blue {
+  0% { background-color: blue; }     /* Start blue */
+  50% { background-color: #FF0000; } /* Switch to red */
+  100% { background-color: blue; }     /* Back to blue */
+}
+

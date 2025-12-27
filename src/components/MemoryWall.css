@@ -1,0 +1,185 @@
+.memory-wall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  transition: background-color 2s ease-in-out;
+}
+
+.photo-container {
+  position: relative;
+  width: 90%;
+  height: 85vh;
+  max-width: 900px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  box-sizing: border-box;
+}
+
+.memory-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.memory-photo-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 63%; /* Adjust height to make space for quote */
+}
+
+.memory-photo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-quote {
+  margin-top: 15px;
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  color: #B23A48;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  text-align: center;
+  z-index: 11;
+  width: 80%;
+  line-height: 1.5;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.nav-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.final-button-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.final-message-button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 30px; /* Increased padding */
+  font-size: 1.8rem; /* Increased font size */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.final-message-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.final-message-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.final-surprise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.final-text {
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  animation: fadeIn 3s ease-in-out;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.final-photo-container {
+  animation: zoomIn 5s ease-in-out forwards;
+  z-index: 1;
+}
+
+.final-photo {
+  max-width: 80%;
+  max-height: 60vh;
+  border-radius: 10px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}

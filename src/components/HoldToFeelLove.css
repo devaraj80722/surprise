@@ -1,0 +1,64 @@
+.hold-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hold-button {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 4vw, 1.2rem); /* Responsive font size */
+  font-weight: 500;
+  padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 6vw, 2rem); /* Responsive padding */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 300px; /* Max width for larger screens */
+}
+
+.hold-heart {
+  width: clamp(20px, 6vw, 25px); /* Responsive width */
+  height: clamp(20px, 6vw, 25px); /* Responsive height */
+  background-color: white;
+  position: relative;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.hold-heart::before,
+.hold-heart::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* Relative to parent .hold-heart */
+  height: 100%; /* Relative to parent .hold-heart */
+  border-radius: 50%;
+  background-color: white;
+}
+
+.hold-heart::before {
+  top: -50%; /* Relative to new height */
+  left: 0;
+}
+
+.hold-heart::after {
+  top: 0;
+  left: 50%; /* Relative to new width */
+}
+
+.love-message {
+  font-size: clamp(1.5rem, 6vw, 1.8rem); /* Responsive font size */
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem;
+}
