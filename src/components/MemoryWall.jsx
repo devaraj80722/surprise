@@ -144,9 +144,7 @@ const MemoryWall = ({ onComplete }) => {
             {photos[currentPhotoIndex].quote && (
               <div 
                 className="photo-quote"
-                style={{
-                  fontSize: photos[currentPhotoIndex].id === 'p5-quote' ? '2rem' : '2.5rem'
-                }}
+                id={photos[currentPhotoIndex].id || ''}
               >
                 {photos[currentPhotoIndex].quote}
               </div>

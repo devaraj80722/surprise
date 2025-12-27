@@ -59,3 +59,39 @@
   text-decoration: underline;
   text-decoration-color: white;
 }
+
+@media (max-width: 768px) {
+  .final-message-container {
+    padding: 1rem;
+    align-items: flex-start;
+    /* Align card to top */
+    overflow-y: auto;
+    /* Allow scrolling if content overflows */
+  }
+
+  .final-message-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+    box-shadow: none;
+    border-radius: 0;
+    /* Remove border-radius for a less "boxed" look */
+  }
+
+  .final-message-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .final-message-text p {
+    margin: 1rem 0;
+  }
+
+  .first-line {
+    font-size: 1.5rem;
+  }
+
+  .signature {
+    font-size: 1.4rem;
+  }
+}

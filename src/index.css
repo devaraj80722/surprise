@@ -37,3 +37,9 @@ body {
   padding: 1rem;
   /* Removed overflow-y: auto; */
 }
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem; /* Reduce padding on mobile */
+  }
+}

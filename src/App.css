@@ -1,1 +1,10 @@
-
+@media (max-width: 768px) {
+  .App {
+    display: flex;
+    flex-direction: column; /* Ensure vertical stacking */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100svh; /* Ensure it takes full viewport height */
+    width: 100%; /* Ensure it takes full width */
+  }
+}

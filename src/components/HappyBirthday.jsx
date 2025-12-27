@@ -94,7 +94,7 @@ const HappyBirthday = ({ onComplete }) => {
         </motion.p>
         <motion.p className="closing" variants={lineFadeUp}>
           with love ✨<br/>
-          Your Deva(Azlagu kunji😅)💜
+          Your Deva(Azlagu kunji😁)💜
         </motion.p>
       </motion.div>
 

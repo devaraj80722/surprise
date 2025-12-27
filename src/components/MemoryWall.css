@@ -7,9 +7,10 @@
   background-color: transparent;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   overflow: hidden;
   transition: background-color 2s ease-in-out;
+  flex-direction: column;
 }
 
 .photo-container {
@@ -183,3 +184,60 @@
   50% { transform: scale(1.04); }
   100% { transform: scale(1); }
 }
+
+@media (max-width: 768px) {
+  .photo-container {
+    width: 100%;
+    height: calc(100svh - 4rem); /* Occupy full height minus some margin top and padding */
+    max-width: 100%;
+    margin-top: 2rem; /* Keep a bit of margin at the top */
+    padding-bottom: 0; /* No need for padding-bottom if button is below */
+    justify-content: flex-start;
+  }
+
+  .memory-photo-wrapper {
+    height: 100%;
+    justify-content: flex-start;
+  }
+
+  .memory-photo-content {
+    height: 63%;
+    flex-grow: 3; /* 60% */
+    width: 100%;
+  }
+
+  .photo-quote {
+    font-size: 1.4rem;
+    width: 90%;
+    flex-grow: 2; /* 40% */
+    padding: 10px 0; /* Add padding only top/bottom */
+    box-sizing: border-box;
+  }
+
+  #p5-quote {
+    font-size: 1.2rem;
+  }
+  
+  .memory-photo {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .final-button-container {
+    position: static; /* Let it flow with content */
+    transform: none; /* Remove transform */
+    margin-top: 1rem; /* Add some margin from the quote */
+    left: auto; /* Remove left */
+    bottom: auto; /* Remove bottom */
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    top: 40%; /* Adjust position relative to the image */
+  }
+}
+
+/* .memory-wall {
+  flex-direction: column;
+} */

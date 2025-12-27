@@ -233,3 +233,22 @@
   box-shadow: 0 12px 28px rgba(255, 154, 158, 0.6);
 }
 
+@media (max-width: 768px) {
+  .cake-container-final, .geometric-cut-scene {
+    transform: scale(0.7);
+  }
+
+  .text-button-wrapper {
+    bottom: 25vh; /* Adjust position for smaller screen */
+  }
+
+  .cake-text-final {
+    font-size: 2rem;
+  }
+
+  .fire-button-final {
+    padding: 12px 28px;
+    font-size: 1.2rem;
+  }
+}
+
