@@ -14,25 +14,26 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--pink), var(--purple));
+  margin: 0;
+  padding: 0;
+  min-height: 100svh; /* Use small viewport height */
   color: var(--text-color);
-  /* Removed overflow: hidden; */
+  overflow-y: auto; /* Make body scrollable */
 }
 
 #root {
-  width: 100%;
-  max-width: 480px; /* Mobile-first approach, increased to accommodate wider card */
-  min-height: 100vh; /* Allow it to grow */
-  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 480px; /* Centered container */
+  margin: 0 auto;
   padding: 1rem;
+  /* Removed overflow-y: auto; */
 }

@@ -21,22 +21,14 @@
 
 /* --- Main Container --- */
 .happy-birthday-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  min-height: 100vh;
-  height: auto;
-  background: #DBB5FB;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 100;
-  overflow-y: auto;
-  padding: clamp(4.5rem, 6vh, 4rem) clamp(1.5rem, 2vw, 1rem); /* Increased padding by 0.5rem for mobile focus */
+  padding: clamp(4.5rem, 6vh, 4rem) clamp(1.5rem, 2vw, 1rem); /* Keep existing padding */
   box-sizing: border-box;
   font-family: 'Caveat', cursive;
+  flex-grow: 1; /* Allow it to grow within the flex parent */
 }
 
 /* --- Top Title Section (White/Glow) --- */
@@ -143,7 +135,7 @@
   border: none;
   border-radius: 50px;
   padding: 1.3rem 2.5rem;
-  font-size: 2.7rem; /* Increased font size by 0.5rem again */
+  font-size: 1.7rem; /* Increased font size by 0.5rem again */
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;

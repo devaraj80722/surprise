@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import './App.css';
+import Layout from './components/Layout'; // Import the Layout component
 
 import LoadingScreen from './components/LoadingScreen';
 import WelcomeCard from './components/WelcomeCard';
@@ -55,12 +56,14 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <AnimatePresence mode="wait">
-        {/* This will animate the entry and exit of each section */}
-        {renderSection()}
-      </AnimatePresence>
-    </div>
+    <Layout>
+      <div className="App">
+        <AnimatePresence mode="wait">
+          {/* This will animate the entry and exit of each section */}
+          {renderSection()}
+        </AnimatePresence>
+      </div>
+    </Layout>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FloatingHearts.css';
 
@@ -10,52 +10,27 @@ const messages = [
   'My world, my love 💖',
 ];
 
-// Animation for the heart container
-const heartVariants = {
-  animate: (custom) => ({
-    y: [0, -20, 0],
-    x: [0, custom.x, 0],
-    transition: {
-      y: {
-        duration: custom.duration,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut',
-      },
-      x: {
-        duration: custom.duration * 2,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut',
-      },
-    },
-  }),
-};
-
-// Animation for the message pop-up
-const messageVariants = {
-  hidden: { opacity: 0, scale: 0.7 },
-  visible: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.7, transition: { duration: 0.2 } },
-};
-
-const Heart = ({ id, onTapped }) => {
-  const custom = {
-    duration: Math.random() * 2 + 3, // 3s to 5s
-    x: Math.random() * 40 - 20, // -20px to +20px
-  };
+const Heart = ({ id, onTapped, onEnd }) => {
+  const duration = Math.random() * 5 + 7; // 7s to 12s
+  const horizontalSway = Math.random() * 60 - 30;
 
   return (
     <motion.div
       className="floating-heart-wrapper"
       style={{
-        top: `${Math.random() * 80}%`,
-        left: `${Math.random() * 80}%`,
+        left: `${Math.random() * 100}vw`,
       }}
-      variants={heartVariants}
-      custom={custom}
-      animate="animate"
+      initial={{ bottom: '-20px' }}
+      animate={{
+        bottom: '110vh',
+        x: [0, horizontalSway, 0],
+      }}
+      transition={{
+        bottom: { duration, ease: 'linear' },
+        x: { duration: duration / 2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' },
+      }}
       onClick={() => onTapped(id)}
+      onAnimationComplete={onEnd}
     >
       <div className="floating-heart" />
     </motion.div>
@@ -63,19 +38,36 @@ const Heart = ({ id, onTapped }) => {
 };
 
 const FloatingHearts = ({ onComplete }) => {
+  const [hearts, setHearts] = useState([]);
   const [tappedHearts, setTappedHearts] = useState([]);
   const [activeMessage, setActiveMessage] = useState(null);
 
-  const handleTap = (id) => {
-    if (tappedHearts.includes(id)) return;
+  const addHeart = useCallback(() => {
+    const id = Date.now() + Math.random();
+    setHearts((current) => [...current, { id }]);
+  }, []);
 
-    const newTappedHearts = [...tappedHearts, id];
-    setTappedHearts(newTappedHearts);
-    setActiveMessage({ id, text: messages[id] });
+  const removeHeart = useCallback((id) => {
+    setHearts((current) => current.filter((heart) => heart.id !== id));
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(addHeart, 800);
+    return () => clearInterval(interval);
+  }, [addHeart]);
+
+  const handleTap = (id) => {
+    if (tappedHearts.some(h => h.id === id)) return;
+
+    const messageIndex = tappedHearts.length % messages.length;
+    const newTappedHeart = { id, message: messages[messageIndex] };
+
+    setTappedHearts(prev => [...prev, newTappedHeart]);
+    setActiveMessage(newTappedHeart);
 
     setTimeout(() => setActiveMessage(null), 2000);
 
-    if (newTappedHearts.length === messages.length) {
+    if (tappedHearts.length + 1 === messages.length) {
       setTimeout(onComplete, 2500);
     }
   };
@@ -87,18 +79,24 @@ const FloatingHearts = ({ onComplete }) => {
           <motion.div
             className="heart-message"
             key={activeMessage.id}
-            variants={messageVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.7, transition: { duration: 0.2 } }}
           >
-            {activeMessage.text}
+            {activeMessage.message}
           </motion.div>
         )}
       </AnimatePresence>
-      {messages.map((_, i) => (
-        <Heart key={i} id={i} onTapped={handleTap} />
-      ))}
+      <AnimatePresence>
+        {hearts.map((heart) => (
+          <Heart
+            key={heart.id}
+            id={heart.id}
+            onTapped={handleTap}
+            onEnd={() => removeHeart(heart.id)}
+          />
+        ))}
+      </AnimatePresence>
       <motion.p
        className='instructions'
        initial={{opacity: 0}}
