@@ -14,10 +14,10 @@
 }
 
 .final-message-card {
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   border-radius: 20px;
   padding: 40px 60px;
-  box-shadow: 0 0 40px 20px rgba(255, 220, 230, 0.7);
+  /* box-shadow: 0 0 40px 20px rgba(255, 220, 230, 0.7); */
   max-width: 800px;
   width: 90%;
   text-align: center;
