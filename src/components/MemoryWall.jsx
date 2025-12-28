@@ -18,7 +18,7 @@ const photos = [
     quote: (
       <>
         Our first birthday together 🎂💖<br />
-        Standing so close, looking into each other’s faces…<br />
+        Standing so close, looking into each other’s faces with bit Nurves😄<br />
         that was the day I fell in love with you 💞<br />
         and I still haven’t recovered from that love 🥹💗
       </>
@@ -46,7 +46,7 @@ const photos = [
   { src: p4,
     quote: (
       <>
-        You felt safe in my shoulder💯,and I protected you with my love🤍Together, we found comfort,happiness,and peace in the same moment🌿<br />
+        You felt safe and happy in my shoulder💯,and I protected you with my love🤍Together, we found comfort,happiness,and peace in the same moment🌿<br />
         No matter how heavy life felt,I held you close and healed it all with my love💙
       </>
     )

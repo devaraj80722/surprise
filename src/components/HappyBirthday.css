@@ -34,11 +34,11 @@
 /* --- Top Title Section (White/Glow) --- */
 .title-container {
   text-align: center;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .main-title {
-  font-size: clamp(49px, 4.5vw, 61px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(39px, 3.5vw, 51px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #fafafa;
   font-weight: 400;
   margin: 0;
@@ -49,7 +49,7 @@
 }
 
 .subtitle {
-  font-size: clamp(53px, 5.5vw, 76px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(43px, 4.5vw, 66px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #8B1E3F; /* Changed to #8B1E3F as requested */
   font-weight: 700;
   margin: 0;
@@ -79,7 +79,7 @@
 }
 
 .tagline {
-  font-size: clamp(35px, 2.5vw, 35px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(25px, 1.5vw, 25px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #090909;
   margin-top: 0.5rem;
 }
@@ -92,7 +92,7 @@
 }
 
 .title {
-  font-size: clamp(45px, 4vw, 57px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(35px, 3.0vw, 47px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #8B1E3F;
   margin-bottom: 0.8rem;
   letter-spacing: 0.5px;
@@ -100,14 +100,14 @@
 }
 
 .text {
-  font-size: clamp(43px, 2.7vw, 46px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(33px, 1.7vw, 36px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #6F2C5F;
   line-height: 1;
   margin-bottom: 0.8rem;
 }
 
 .secondary-title {
-  font-size: clamp(43px, 3.5vw, 51px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(33px, 2.5vw, 41px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #8B1E3F;
   margin-top: 0.5rem;
   margin-bottom: 0.8rem;
@@ -116,7 +116,7 @@
 }
 
 .closing {
-  font-size: clamp(48px, 2.5vw, 48px); /* Increased by 0.5rem (approx 8px) again for mobile */
+  font-size: clamp(38px, 1.5vw, 38px); /* Increased by 0.5rem (approx 8px) again for mobile */
   color: #7A3E8E;
   font-weight: 500;
   margin-top: 1.5rem;

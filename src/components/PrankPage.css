@@ -40,14 +40,14 @@
 }
 
 .prank-text-line1 {
-  font-size: clamp(3.5rem, 8vw, 4rem); /* Increased responsive font size by 0.5rem again */
+  font-size: clamp(2.9rem, 7.4vw, 3.4rem); /* Increased responsive font size by 0.5rem again */
   font-weight: 700;
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .prank-text-line2 {
-  font-size: clamp(2.5rem, 5vw, 3rem); /* Increased responsive font size by 0.5rem again */
+  font-size: clamp(2.3rem, 4.8vw, 2.8rem); /* Increased responsive font size by 0.5rem again */
   color: black;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   margin-top: 10px;

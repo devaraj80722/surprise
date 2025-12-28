@@ -104,7 +104,7 @@
 
 .final-button-container {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -115,8 +115,8 @@
   color: white;
   border: none;
   border-radius: 30px;
-  padding: 20px 30px; /* Increased padding */
-  font-size: 1.8rem; /* Increased font size */
+  padding: 8px 15px; /* Increased padding */
+  font-size: 1rem; /* Increased font size */
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -226,9 +226,9 @@
   .final-button-container {
     position: static; /* Let it flow with content */
     transform: none; /* Remove transform */
-    margin-top: 1rem; /* Add some margin from the quote */
+    /* margin-top: 1rem; /* Add some margin from the quote */
     left: auto; /* Remove left */
-    bottom: auto; /* Remove bottom */
+    bottom: 1rem; /* Remove bottom */
   }
 
   .nav-arrow {
