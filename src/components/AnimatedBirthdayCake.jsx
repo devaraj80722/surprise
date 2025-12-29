@@ -138,7 +138,7 @@ const AnimatedBirthdayCake = ({ onComplete }) => {
 
             <div className="text-button-wrapper">
                 <AnimatePresence>
-                    {showText && <motion.p className="cake-text-final" variants={textVariants} initial="hidden" animate="visible" exit="hidden">This is a virtual cake for my azlagu pulla🫶</motion.p>}
+                    {showText && <motion.p className="cake-text-final" variants={textVariants} initial="hidden" animate="visible" exit="hidden">Death by Chacolate🎂 vanga kaasu illa Thangoo😁 atha nane senjita konjam adujust panniko🫶</motion.p>}
                 </AnimatePresence>
                 <AnimatePresence>
                     {/* {showButton && <motion.button className="fire-button-final" onClick={handleFireCandle} variants={textVariants} initial="hidden" animate="visible" exit="hidden" disabled={stage === 'FLAME_ON'}>Let's Fire the Candle</motion.button>} */}

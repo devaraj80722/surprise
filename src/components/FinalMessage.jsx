@@ -11,7 +11,7 @@ const FinalMessage = () => {
     if (audioRef.current) {
       audioRef.current.volume = 0;
       audioRef.current.play().catch(error => console.log('Autoplay error:', error));
-      
+
       let volume = 0;
       const fadeInInterval = setInterval(() => {
         volume += 0.1;
@@ -19,7 +19,7 @@ const FinalMessage = () => {
           volume = 1;
           clearInterval(fadeInInterval);
         }
-        if(audioRef.current) {
+        if (audioRef.current) {
           audioRef.current.volume = volume;
         }
       }, 200);
@@ -33,11 +33,11 @@ const FinalMessage = () => {
           if (volume <= 0) {
             volume = 0;
             clearInterval(fadeOutInterval);
-            if(audioRef.current) {
+            if (audioRef.current) {
               audioRef.current.pause();
             }
           }
-          if(audioRef.current) {
+          if (audioRef.current) {
             audioRef.current.volume = volume;
           }
         }, 500);
@@ -108,11 +108,15 @@ const FinalMessage = () => {
             and choosing each other every single day 🤍♾️
           </motion.p>
           <motion.p variants={lineVariants}>
+            In this generation, we were lucky enough to find love💖, Care🌷, loyalty🤝, friendship🫂, and romance 💞
+            all in one person and that <br /><span className="highlight"> Made Our Love Rare</span> 💎💫<br />
+          </motion.p>
+          <motion.p variants={lineVariants}>
             Distance never weakened us; it only made our love stronger 🌍💞<br />
             And I promise to carry this love with you through life, <span className="highlight">forever 🤍♾️</span>
           </motion.p>
           <motion.p variants={lineVariants} className="signature">
-            With all my love,<br /> <span className="highlight">Deva 🩵(Azlagu Kunji😁)</span> <br/><span className="underline-white"> Ummmaaaaaaah💋😘</span>
+            With all my love,<br /> <span className="highlight">Deva 🩵(Azlagu Kunji😁)</span> <br /><span className="underline-white"> Ummmaaaaaaah💋😘</span>
           </motion.p>
         </motion.div>
       </motion.div>
